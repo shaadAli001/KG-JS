@@ -1,14 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Variable</title>
-  </head>
-  <body>
-    <button class="bag_btn">Add to Bag</button>
-    <button class="wish_btn">Wishlist</button>
-    <script src="./script.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Variable</title>
+</head>
+
+<body>
+  <!-- <button class="bag_btn" onclick="add()">Add to Bag</button>
+
+  <button class="wish_btn" onclick="sub()">Wishlist</button>
+  <button class="bag_btn" onclick="double_add()">1+1 Sale item</button>
+
+  <h1 id="cart"></h1> -->
+
+  <!-- <script src="./script.js"></script> -->
+
+  <p id="name"></p>
+
+  <p id="value"></p>
+
+
+
+
+
+
+  <script>
+    const name = 'Shaad';
+    document.querySelector("#name").innerHTML = `My Name is ${name}`;
+    let GST = 18;
+    let price = 15000;
+    let amount = price + (`${GST}` / 100) * price;
+    document.querySelector('#value').innerHTML = `Amount After GST=${amount}`;
+    console.log('45' + 45);
+    console.log(eval('45+45'));
+
+
+
+
+
+
+
+
+    // let cart = 0;
+    // document.querySelector("#cart").innerHTML = `Your Cart has ${cart} Items`;
+    // function add() {
+    //   document.querySelector("#cart").innerHTML = `Your Cart has ${cart +=1} Items`;
+    // }
+    // function double_add() {
+    //   document.querySelector("#cart").innerHTML = `Your Cart has ${cart += 2} Items`;
+    // }
+    // function sub() {
+    //   document.querySelector("#cart").innerHTML = `Your Cart has ${cart -=1} Items`;
+    // }
+  </script>
+</body>
+
 </html>
