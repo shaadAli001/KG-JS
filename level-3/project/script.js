@@ -1,5 +1,5 @@
 let computer_choice;
-function Bat() {
+function computer() {
     let random = Math.random() * 3;
     if (random > 0 && random <= 1) {
         computer_choice = 'Bat';
@@ -10,7 +10,10 @@ function Bat() {
     else if (random > 2 && random <= 3) {
         computer_choice = 'Stumps';
     }
-    // result
+}
+function Bat() {
+    computer()
+    // comparison
     let result;
     if (computer_choice === 'Ball') {
         result = 'User Won';
@@ -24,18 +27,8 @@ function Bat() {
     alert(`You have choosend Bat, Computer Choice is ${computer_choice},${result}`)
 }
 function Ball() {
-    console.log('You Choosed Ball');
-    let random = Math.random() * 3;
-    if (random > 0 && random <= 1) {
-        computer_choice = 'Bat';
-    }
-    else if (random > 1 && random <= 2) {
-        computer_choice = 'Ball';
-    }
-    else if (random > 2 && random <= 3) {
-        computer_choice = 'Stumps';
-    }
-    // 
+    computer()
+    // comparison
     if (computer_choice === 'Ball') {
         result = `It's a Tie`;
     }
@@ -48,16 +41,8 @@ function Ball() {
     alert(`You have choosend Ball, Computer Choice is ${computer_choice},${result}`)
 }
 function Stump() {
-    let random = Math.random() * 3;
-    if (random > 0 && random <= 1) {
-        computer_choice = 'Bat';
-    }
-    else if (random > 1 && random <= 2) {
-        computer_choice = 'Ball';
-    }
-    else if (random > 2 && random <= 3) {
-        computer_choice = 'Stumps';
-    }
+    computer()
+    // comparison
     if (computer_choice === 'Ball') {
         result = 'Computer Won';
     }
