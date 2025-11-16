@@ -1,57 +1,53 @@
-let computer_choice;
-function computer() {
+const computer = () => {
     let random = Math.random() * 3;
     if (random > 0 && random <= 1) {
-        computer_choice = 'Bat';
+        return 'Bat';
     }
     else if (random > 1 && random <= 2) {
-        computer_choice = 'Ball';
-    }
-    else if (random > 2 && random <= 3) {
-        computer_choice = 'Stumps';
-    }
-}
-function Bat() {
-    computer()
-    // comparison
-    let result;
-    if (computer_choice === 'Ball') {
-        result = 'User Won';
-    }
-    else if (computer_choice === 'Bat') {
-        result = `It's a Tie`;
+        return 'Ball';
     }
     else {
-        result = 'Computer Won';
+        return 'Stumps';
     }
-    alert(`You have choosend Bat, Computer Choice is ${computer_choice},${result}`)
 }
-function Ball() {
-    computer()
-    // comparison
-    if (computer_choice === 'Ball') {
-        result = `It's a Tie`;
-    }
-    else if (computer_choice === 'Bat') {
-        result = 'Computer Won';
-    }
-    else {
-        result = 'User Won';
-    }
-    alert(`You have choosend Ball, Computer Choice is ${computer_choice},${result}`)
-}
-function Stump() {
-    computer()
-    // comparison
-    if (computer_choice === 'Ball') {
-        result = 'Computer Won';
-    }
-    else if (computer_choice === 'Bat') {
-        result = 'You Won';
-    }
-    else {
-        result = `It's a Tie`;
-    }
-    alert(`You Choosed Stump, Computer Choice is ${computer_choice},${result}`)
 
+const get_result = (user_choice, computer_choice) => {
+    if (user_choice === 'Bat') {
+        if (computer_choice === 'Ball') {
+            return 'User Won';
+        }
+        else if (computer_choice === 'Bat') {
+            return 'Its a Draw';
+        }
+        else if (computer_choice === 'Stump') {
+            return 'Computer Won';
+        }
+        console.log(user_choice, computer_choice,)
+    }
+    if (user_choice === 'Ball') {
+        if (computer_choice === 'Ball') {
+            return 'Its a Draw';
+        }
+        else if (computer_choice === 'Bat') {
+            return 'Computer Won';
+        }
+        else if (computer_choice === 'Stump') {
+            return 'User Won';
+        }
+    }
+    if (user_choice === 'Stump') {
+        if (computer_choice === 'Ball') {
+            return 'Computer Won';
+        }
+        else if (computer_choice === 'Bat') {
+            return 'User Won';
+        }
+        else if (computer_choice === 'Stump') {
+            return 'Its a Draw';
+        }
+    }
+}
+
+const show_result = (user_choice, computer_choice, result) => {
+    alert(`You =  ${user_choice}\n Computer = ${computer_choice}\n Result = ${result} `)
 }
