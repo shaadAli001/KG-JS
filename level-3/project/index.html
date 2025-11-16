@@ -10,17 +10,19 @@
 
 <body>
     <h1>Bat Ball Stump Game</h1>
-    <button onclick="let computer_choice = computer(); 
-        let result=get_result('Bat',computer_choice); 
-        show_result('Bat',computer_choice,result)">Bat</button>
 
-    <button onclick="computer_choice = computer(); 
-        result=get_result('Ball',computer_choice); 
-        show_result('Ball',computer_choice,result)">Ball</button>
+    <button onclick="let computer_choice=computer();
+    let result= get_result('Bat',computer_choice);
+    show_result('Bat',computer_choice,result)">Bat</button>
 
-    <button onclick="computer_choice = computer();
-        result=get_result('Stump',computer_choice); 
-        show_result('Stump',computer_choice,result)">Stump</button>
+    <button onclick="computer_choice=computer();
+    result=get_result('Ball',computer_choice);
+    show_result('Ball',computer_choice,result)">Ball</button>
+
+    <button onclick="computer_choice=computer();
+    result=get_result('Stumps',computer_choice);
+    show_result('Stumps',computer_choice,result)">Stumps</button>
+
 
     <script src="./script.js"></script>
 </body>
