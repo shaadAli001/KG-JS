@@ -1,50 +1,66 @@
-const computer= () => {
-    let random = Math.floor(Math.random() * 3) + 1;
-    if (random == 1) {
-        return 'Bat';
-    } else if (random == 2) {
-        return 'Ball';
-    }
-    else {
-        return 'Stumps';
-    }
-}
+let score = {
+  win: 0,
+  lost: 0,
+  draw: 0,
+};
+
+const computer = () => {
+  let random = Math.floor(Math.random() * 3) + 1;
+  if (random == 1) {
+    return "Bat";
+  } else if (random == 2) {
+    return "Ball";
+  } else {
+    return "Stumps";
+  }
+};
+
 const get_result = (user_choice, computer_choice) => {
-    if (user_choice === 'Bat') {
-        if (computer_choice === 'Bat') {
-            return "Draw"
-        }
-        else if (computer_choice === 'Ball') {
-            return "User Won"
-        }
-        else if (computer_choice === 'Stumps') {
-            return "Computer Won"
-        }
+  if (user_choice === "Bat") {
+    if (computer_choice === "Bat") {
+      score.draw++;
+      return "Draw";
+    } else if (computer_choice === "Ball") {
+      score.win++;
+      return "User Won";
+    } else if (computer_choice === "Stumps") {
+      score.lost++;
+      return "Computer Won";
     }
-    if (user_choice === 'Ball') {
-        if (computer_choice === 'Bat') {
-            return "Computer Won"
-        }
-        else if (computer_choice === 'Ball') {
-            return "User Won"
-        }
-        else if (computer_choice === 'Stumps') {
-            return "User Won"
-        }
+  }
+  if (user_choice === "Ball") {
+    if (computer_choice === "Bat") {
+      score.lost++;
+      return "Computer Won";
+    } else if (computer_choice === "Ball") {
+      score.draw++;
+      return "Draw";
+    } else if (computer_choice === "Stumps") {
+      score.win++;
+      return "User Won";
     }
-    if (user_choice === 'Stumps') {
-        if (computer_choice === 'Bat') {
-            return "User Won"
-        }
-        else if (computer_choice === 'Ball') {
-            return "Computer Won"
-        }
-        else if (computer_choice === 'Stumps') {
-            return "Draw"
-        }
+  }
+  if (user_choice === "Stumps") {
+    if (computer_choice === "Bat") {
+      score.win++;
+      return "User Won";
+    } else if (computer_choice === "Ball") {
+      score.lost++;
+      return "Computer Won";
+    } else if (computer_choice === "Stumps") {
+      score.draw++;
+      return "Draw";
     }
-}
+  }
+};
 
 const show_result = (user_choice, computer_choice, result) => {
-    alert(`User Choice = ${user_choice}\n Computer Choice =${computer_choice}\n Winner=${result}`)
-}
+  alert(
+    `User=${user_choice}
+     Computer Choice =${computer_choice}
+     Winner=${result}
+     Won:${score.win}
+     Lost:${score.lost}
+     Draw:${score.draw}`
+  );
+};
