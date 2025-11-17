@@ -6,7 +6,7 @@ const computer= () => {
         return 'Ball';
     }
     else {
-        return 'Stumps'
+        return 'Stumps';
     }
 }
 const get_result = (user_choice, computer_choice) => {
