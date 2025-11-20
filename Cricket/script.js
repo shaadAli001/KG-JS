@@ -2,6 +2,12 @@ let score = {
   win: 0,
   lost: 0,
   draw: 0,
+  display_score: function () {
+    return `
+     Won:${score.win}
+     Lost:${score.lost}
+     Draw:${score.draw}`;
+  },
 };
 
 const computer = () => {
@@ -22,7 +28,7 @@ const get_result = (user_choice, computer_choice) => {
       return "Draw";
     } else if (computer_choice === "Ball") {
       score.win++;
-      return "User Won";
+      return "You Won";
     } else if (computer_choice === "Stumps") {
       score.lost++;
       return "Computer Won";
@@ -37,13 +43,13 @@ const get_result = (user_choice, computer_choice) => {
       return "Draw";
     } else if (computer_choice === "Stumps") {
       score.win++;
-      return "User Won";
+      return "You Won";
     }
   }
   if (user_choice === "Stumps") {
     if (computer_choice === "Bat") {
       score.win++;
-      return "User Won";
+      return "You Won";
     } else if (computer_choice === "Ball") {
       score.lost++;
       return "Computer Won";
@@ -56,11 +62,8 @@ const get_result = (user_choice, computer_choice) => {
 
 const show_result = (user_choice, computer_choice, result) => {
   alert(
-    `User=${user_choice}
+    `You=${user_choice}
      Computer Choice =${computer_choice}
-     Winner=${result}
-     Won:${score.win}
-     Lost:${score.lost}
-     Draw:${score.draw}`
+     Winner=${result} ${score.display_score()}`
   );
 };
