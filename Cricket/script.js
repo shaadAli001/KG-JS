@@ -1,9 +1,9 @@
 let score_str = localStorage.getItem("score");
 let score;
-resetscore(score_str);
-function resetscore (score_str){
+reset_score(score_str);
+function reset_score(score_str) {
   localStorage.clear();
-  score = JSON.parse(score_str) || {
+  score = score_str ? JSON.parse(score_str) : {
     win: 0,
     lost: 0,
     draw: 0,
