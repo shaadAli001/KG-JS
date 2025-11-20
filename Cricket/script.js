@@ -1,27 +1,32 @@
 let score_str = localStorage.getItem("score");
-let score = JSON.parse(score_str)|| {
-  win: 0,
-  lost: 0,
-  draw: 0,
-};
-
-(score.display_score = function () {
-  return `
-     Won:${score.win}
-     Lost:${score.lost}
-     Draw:${score.draw}`;
-})
-
-  const computer=()=> {
-    let random = Math.floor(Math.random() * 3) + 1;
-    if (random == 1) {
-      return "Bat";
-    } else if (random == 2) {
-      return "Ball";
-    } else {
-      return "Stumps";
-    }
+let score;
+resetscore(score_str);
+function resetscore (score_str){
+  localStorage.clear();
+  score = JSON.parse(score_str) || {
+    win: 0,
+    lost: 0,
+    draw: 0,
   };
+
+  (score.display_score = function () {
+    return `
+       Won:${score.win}
+       Lost:${score.lost}
+       Draw:${score.draw}`;
+  })
+}
+
+const computer = () => {
+  let random = Math.floor(Math.random() * 3) + 1;
+  if (random == 1) {
+    return "Bat";
+  } else if (random == 2) {
+    return "Ball";
+  } else {
+    return "Stumps";
+  }
+};
 
 const get_result = (user_choice, computer_choice) => {
   if (user_choice === "Bat") {
