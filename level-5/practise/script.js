@@ -20,7 +20,7 @@ let product_2 = {
 
 // let { message, status } = product;
 // console.log(`${message}\n${status}`);
- 
+
 const identical_products = (product, product_2) => {
   if (typeof product !== "object" || typeof product_2 !== "object") {
     return false;
@@ -39,4 +39,3 @@ const identical_products = (product, product_2) => {
   }
 };
 console.log(identical_products(product, product_2));
-
