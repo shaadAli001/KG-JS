@@ -14,16 +14,17 @@ greetings("Ramesh");
 
 let count = localStorage.getItem("count") || 0;
 let btn = document.getElementById("btn");
-btn.textContent=count;
+btn.style = change_color();
+btn.textContent = count;
 
 btn.addEventListener("click", () => {
   count++;
   localStorage.setItem("count", count);
-  update();
+  btn.textContent = count;
+   change_color()
 });
 
-function update() {
-  btn.textContent = count;
+function change_color() {
   if (count % 2 == 0) {
     btn.classList.add("even");
     btn.classList.remove("odd");
