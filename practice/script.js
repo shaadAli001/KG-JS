@@ -1,21 +1,21 @@
 let score_str = localStorage.getItem("score");
 let score;
-reset(score_str);
+reset(score_str)
 function reset(score_str) {
   localStorage.clear();
-  (score = score_str
+  score = score_str
     ? JSON.parse(score_str)
     : {
         win: 0,
         lose: 0,
         draw: 0,
-      }),
-    (score.display_score = function () {
-      return `
+      },
+  score.display_score = function () {
+    return `
   Win=${score.win}
   lose=${score.lose}
   draw=${score.draw}`;
-    });
+  };
 }
 
 function computer_choice() {
