@@ -1,24 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>cricket practice</title>
-</head>
-<style>
+  </head>
+  <style>
     body {
-        text-align: center;
+      text-align: center;
     }
-</style>
+  </style>
 
-<body>
-    <h1>Cricket Luck</h1>
-    <button onclick="computer_choice()">Bat</button>
-    <button onclick="computer_choice()">Ball</button>
-    <button onclick="computer_choice()">Stumps</button>
+  <body>
+    <h1>Cricket</h1>
+    <button
+      onclick="let computer=computer_choice(); let result=get_result('bat',computer);
+      show_result('bat',computer,result)"
+    >
+      Bat
+    </button>
 
+    <button
+      onclick="computer=computer_choice();result=get_result('ball',computer);show_result('ball',computer,result)"
+    >
+      Ball
+    </button>
+
+    <button
+      onclick="computer=computer_choice(); result=get_result('stump',computer);show_result('stump',computer,result)"
+    >
+      Stumps
+    </button>
+    <button onclick="reset()">Reset</button>
     <script src="./script.js"></script>
-</body>
-
+  </body>
 </html>
