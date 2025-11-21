@@ -6,7 +6,25 @@
     <link rel="stylesheet" href="style.css" />
     <title>Cricket Game</title>
   </head>
-
+  <style>
+    .img {
+      margin: 1rem 0rem;
+      width: 100px;
+      height: 100px;
+      border-radius: .5rem;
+    }
+    button {
+      border: none; /* removes border */
+      outline: none; /* removes focus outline */
+      background: none;
+    }
+    .reset{
+      padding: 10px 15px;
+      margin: 10px 0px;
+      border: 2px solid black;
+      background-color: grey;
+    }
+  </style>
   <body>
     <h1>Bat Ball Stump Game</h1>
 
@@ -15,7 +33,7 @@
     let result= get_result('Bat',computer_choice);
     show_result('Bat',computer_choice,result)"
     >
-      Bat
+      <img src="./image/bat.jpg" class="img" alt="" />
     </button>
 
     <button
@@ -23,23 +41,23 @@
     result=get_result('Ball',computer_choice);
     show_result('Ball',computer_choice,result)"
     >
-      Ball
+      <img src="./image/ball.jpg" class="img" alt="" />
     </button>
 
-    <button
+    <button 
       onclick="computer_choice=computer();
     result=get_result('Stumps',computer_choice);
     show_result('Stumps',computer_choice,result)"
     >
-      Stumps
+      <img src="./image//stump.jpg" alt="" class="img" />
     </button>
 
-    <button onclick="reset_score()">Reset</button>
-
+    
     <h3 id="user_choice"></h3>
     <h3 id="computer_choice"></h3>
     <h3 id="result"></h3>
     <h3 id="show_result"></h3>
+    <button class="reset" onclick="reset_score()">Reset</button>
     <script src="./script.js"></script>
   </body>
 </html>
