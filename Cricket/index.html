@@ -1,31 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Cricket Game</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>Bat Ball Stump Game</h1>
 
-    <button onclick="let computer_choice=computer();
+    <button
+      onclick="let computer_choice=computer();
     let result= get_result('Bat',computer_choice);
-    show_result('Bat',computer_choice,result)">Bat</button>
+    show_result('Bat',computer_choice,result)"
+    >
+      Bat
+    </button>
 
-    <button onclick="computer_choice=computer();
+    <button
+      onclick="computer_choice=computer();
     result=get_result('Ball',computer_choice);
-    show_result('Ball',computer_choice,result)">Ball</button>
+    show_result('Ball',computer_choice,result)"
+    >
+      Ball
+    </button>
 
-    <button onclick="computer_choice=computer();
+    <button
+      onclick="computer_choice=computer();
     result=get_result('Stumps',computer_choice);
-    show_result('Stumps',computer_choice,result)">Stumps</button>
+    show_result('Stumps',computer_choice,result)"
+    >
+      Stumps
+    </button>
 
     <button onclick="reset_score()">Reset</button>
 
+    <h3 id="user_choice"></h3>
+    <h3 id="computer_choice"></h3>
+    <h3 id="result"></h3>
+    <h3 id="show_result"></h3>
     <script src="./script.js"></script>
-</body>
-
+  </body>
 </html>

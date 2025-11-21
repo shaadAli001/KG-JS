@@ -3,18 +3,21 @@ let score;
 reset_score(score_str);
 function reset_score(score_str) {
   localStorage.clear();
-  score = score_str ? JSON.parse(score_str) : {
-    win: 0,
-    lost: 0,
-    draw: 0,
-  };
+  score = score_str
+    ? JSON.parse(score_str)
+    : {
+        win: 0,
+        lost: 0,
+        draw: 0,
+      };
 
-  (score.display_score = function () {
+  score.display_score = function () {
     return `
        Won:${score.win}
        Lost:${score.lost}
        Draw:${score.draw}`;
-  })
+  };
+  show_result();
 }
 
 const computer = () => {
@@ -67,11 +70,21 @@ const get_result = (user_choice, computer_choice) => {
   }
 };
 
-const show_result = (user_choice, computer_choice, result) => {
+function show_result(user_choice, computer_choice, result) {
   localStorage.setItem("score", JSON.stringify(score));
-  alert(
-    `You=${user_choice}
-     Computer Choice =${computer_choice}
-     Winner=${result} ${score.display_score()}`
-  );
-};
+
+  document.querySelector("#user_choice").innerText =
+    user_choice !== undefined ? `\nUser Choice = ${user_choice}` : "";
+
+  document.querySelector("#computer_choice").innerText =
+    computer_choice !== undefined
+      ? `\ncomputer Choice = ${computer_choice}`
+      : "";
+
+  document.querySelector("#result").innerText =
+    result !== undefined ? `\nResult = ${result}` : "";
+
+  document.querySelector("#show_result").innerText = score
+    ? `\nScore:${score.display_score()}`
+    : "";
+}
